@@ -1,0 +1,16 @@
+[package]
+name = "eu_true"
+version = "1.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[[bin]]
+name = "true"
+path = "src/eu_true_bin.rs"
+
+[lib]
+name = "eu_true"
+path = "src/eu_true_lib.rs"

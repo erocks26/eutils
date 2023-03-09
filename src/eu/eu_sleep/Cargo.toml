@@ -1,0 +1,16 @@
+[package]
+name = "eu_sleep"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[[bin]]
+name = "sleep"
+path = "src/eu_sleep_bin.rs"
+
+[lib]
+name = "eu_sleep"
+path = "src/eu_sleep_lib.rs"

@@ -1,0 +1,35 @@
+[package]
+name = "eutils"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+eu_sleep    = { optional = true, version="0.1.0", package="eu_sleep", path="src/eu/eu_sleep"}
+eu_true     = { optional = true, version="1.0.0", package="eu_true", path="src/eu/eu_true"}
+clap     = { version = "4.1.8", features = [ "derive" ] }
+
+[features]
+default = [ "core" ]
+core = [
+    "eu_sleep",
+    "eu_true",
+]
+multicall = []
+
+[[bin]]
+name = "eutils"
+path = "src/bin/multicall.rs"
+required-features = [ "multicall" ]
+
+[[bin]]
+name = "sleep"
+path = "src/eu/eu_sleep/src/eu_sleep_bin.rs"
+required-features = [ "eu_sleep" ]
+
+[[bin]]
+name = "true"
+path = "src/eu/eu_true/src/eu_true_bin.rs"
+required-features = [ "eu_true" ]
+
