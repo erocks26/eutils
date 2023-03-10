@@ -1,0 +1,17 @@
+[package]
+name = "eu_sleep"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+
+[dependencies]
+clap      = { workspace = true, features = [ "derive" ] }
+eu_common = { workspace = true }
+
+[[bin]]
+name = "sleep"
+path = "src/sleep_bin.rs"
+
+[lib]
+name = "eu_sleep"
+path = "src/sleep_lib.rs"

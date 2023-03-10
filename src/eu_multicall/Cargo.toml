@@ -1,0 +1,21 @@
+[package]
+name = "eu_multicall"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+
+[dependencies]
+clap     = { workspace=true, features = [ "derive" ] }
+eu_sleep = { path="../utils/eu_sleep", optional=true }
+eu_true  = { path="../utils/eu_true", optional=true }
+
+[features]
+core = [
+    "eu_sleep",
+    "eu_true"
+]
+default = [ "core" ]
+
+[[bin]]
+name = "eutils"
+path = "multicall.rs"

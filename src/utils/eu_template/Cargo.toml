@@ -1,0 +1,17 @@
+[package]
+name = "eu_template"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+
+[dependencies]
+clap      = { workspace=true, features = [ "derive" ] }
+eu_common = { workspace = true }
+
+[[bin]]
+name = "template"
+path = "src/template_bin.rs"
+
+[lib]
+name = "template"
+path = "src/template_lib.rs"
